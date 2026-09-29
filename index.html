@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本史探究マスター：ワシントン体制・政党内閣の成立</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 40%, #030712 100%);
+            min-height: 100vh;
+            color: #f8fafc;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .option-btn {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .option-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px -4px rgba(99, 102, 241, 0.4);
+        }
+        .pulse-glow {
+            animation: pulse-glow-anim 2s infinite;
+        }
+        @keyframes pulse-glow-anim {
+            0%, 100% { box-shadow: 0 0 15px rgba(99, 102, 241, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(99, 102, 241, 0.7); }
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.6);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #6366f1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen text-slate-100 antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- Header Controls -->
+    <header class="w-full p-4 flex justify-between items-center max-w-4xl mx-auto z-10">
+        <div class="flex items-center space-x-3">
+            <span class="bg-indigo-600 text-white p-2.5 rounded-2xl text-xl font-bold shadow-lg shadow-indigo-500/30">
+                <i class="fa-solid fa-earth-americas"></i>
+            </span>
+            <div>
+                <h1 class="text-lg font-black tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-sky-300 to-emerald-300">
+                    日本史探究 Master
+                </h1>
+                <p class="text-xs text-slate-400">ワシントン体制と政党内閣の成立 (プリント56完全対応)</p>
+            </div>
+        </div>
+        
+        <!-- Sound Controls -->
+        <div class="flex items-center space-x-2 bg-slate-800/80 p-1.5 rounded-2xl border border-slate-700">
+            <button id="bgm-toggle" class="px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center space-x-1.5 transition bg-slate-700 hover:bg-slate-600 text-slate-300">
+                <i class="fa-solid fa-music"></i>
+                <span id="bgm-status">BGM: OFF</span>
+            </button>
+            <button id="se-toggle" class="px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center space-x-1.5 transition bg-indigo-600 hover:bg-indigo-500 text-white">
+                <i class="fa-solid fa-volume-high"></i>
+                <span id="se-status">SE: ON</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 flex items-center justify-center p-4 w-full max-w-4xl mx-auto">
+        
+        <!-- START SCREEN -->
+        <div id="start-screen" class="w-full glass-card rounded-3xl p-6 md:p-10 shadow-2xl text-center space-y-6">
+            <div class="inline-block p-4 rounded-full bg-indigo-500/10 border border-indigo-500/30 mb-1">
+                <i class="fa-solid fa-scale-balanced text-5xl text-indigo-400"></i>
+            </div>
+            <h2 class="text-2xl md:text-4xl font-black text-white leading-tight">
+                ワシントン体制・政党内閣の成立<br>
+                <span class="text-sky-400 text-xl md:text-2xl font-bold">高校日本史プリント56 完全網羅テスト</span>
+            </h2>
+            <p class="text-slate-300 text-sm md:text-base max-w-lg mx-auto leading-relaxed">
+                パリ講和会議・ワシントン会議の3大条約から、関東大震災、第2次護憲運動、加藤高明内閣の1925年3大政策（普選法・治安維持法・日ソ基本条約）まで徹底マスター！
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-left my-6">
+                <div class="bg-slate-800/60 p-4 rounded-2xl border border-slate-700/60">
+                    <div class="text-indigo-400 font-bold mb-1 flex items-center">
+                        <i class="fa-solid fa-list-check mr-2"></i>全17問を完全網羅
+                    </div>
+                    <p class="text-xs text-slate-400">授業プリントNo.56の穴埋め①〜⑮、軍縮比率、選挙権推移表まで全てカバー。</p>
+                </div>
+                <div class="bg-slate-800/60 p-4 rounded-2xl border border-slate-700/60">
+                    <div class="text-sky-400 font-bold mb-1 flex items-center">
+                        <i class="fa-solid fa-brain mr-2"></i>語呂合わせ解説
+                    </div>
+                    <p class="text-xs text-slate-400">「か・わ・た・は・わ・い」や比率記憶など受験に役立つポイント満載。</p>
+                </div>
+                <div class="bg-slate-800/60 p-4 rounded-2xl border border-slate-700/60">
+                    <div class="text-emerald-400 font-bold mb-1 flex items-center">
+                        <i class="fa-solid fa-award mr-2"></i>ランク判定機能
+                    </div>
+                    <p class="text-xs text-slate-400">全問正解で「護憲三派の大チーフ・加藤高明級」の称号をゲットしよう！</p>
+                </div>
+            </div>
+
+            <!-- Mode Buttons -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4 pt-2">
+                <button id="start-btn" class="w-full sm:w-auto px-10 py-4 rounded-2xl bg-gradient-to-r from-indigo-500 via-sky-500 to-emerald-500 text-white font-black text-lg shadow-xl hover:brightness-110 active:scale-95 transition pulse-glow">
+                    <i class="fa-solid fa-play mr-2"></i> 小テストを開始する！
+                </button>
+            </div>
+        </div>
+
+        <!-- QUIZ SCREEN -->
+        <div id="quiz-screen" class="w-full glass-card rounded-3xl p-6 md:p-8 shadow-2xl hidden space-y-6">
+            
+            <!-- Progress & Meta -->
+            <div class="space-y-2">
+                <div class="flex justify-between items-center text-xs font-bold text-slate-400">
+                    <span id="question-category" class="bg-indigo-500/20 text-indigo-300 px-3 py-1 rounded-full border border-indigo-500/30">
+                        分野: パリ講和会議と国際連盟
+                    </span>
+                    <span id="question-count">第 1 / 17 問</span>
+                </div>
+                <!-- Progress Bar -->
+                <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden p-0.5 border border-slate-700">
+                    <div id="progress-bar" class="h-full bg-gradient-to-r from-indigo-500 via-sky-500 to-emerald-400 rounded-full transition-all duration-300" style="width: 5.8%;"></div>
+                </div>
+            </div>
+
+            <!-- Question Card -->
+            <div class="bg-slate-800/80 p-5 md:p-6 rounded-2xl border border-slate-700/80 space-y-4">
+                <h3 id="question-text" class="text-lg md:text-xl font-bold text-white leading-snug">
+                    <!-- Question text injected here -->
+                </h3>
+                
+                <!-- Context Box -->
+                <div id="context-box" class="hidden p-3.5 rounded-xl bg-slate-900/80 border border-indigo-500/30 text-xs text-sky-200 flex items-center space-x-3">
+                    <div id="context-icon" class="text-2xl text-amber-400 shrink-0"><i class="fa-solid fa-lightbulb"></i></div>
+                    <div id="context-text" class="italic leading-relaxed"></div>
+                </div>
+            </div>
+
+            <!-- Options Grid -->
+            <div id="options-container" class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <!-- Option buttons dynamically generated -->
+            </div>
+
+            <!-- Feedback Area -->
+            <div id="feedback-card" class="hidden p-5 rounded-2xl border space-y-3 animate-fade-in">
+                <div class="flex items-center justify-between">
+                    <div id="feedback-badge" class="font-black text-lg flex items-center space-x-2">
+                        <!-- Icon & Correct/Incorrect text -->
+                    </div>
+                    <div id="score-increment" class="text-xs font-bold px-2.5 py-1 rounded-full"></div>
+                </div>
+                <p id="explanation-text" class="text-sm text-slate-200 leading-relaxed">
+                    <!-- Explanation injected here -->
+                </p>
+                <button id="next-btn" class="w-full py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition flex items-center justify-center space-x-2 shadow-lg">
+                    <span>次の問題へ進む</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- RESULT SCREEN -->
+        <div id="result-screen" class="w-full glass-card rounded-3xl p-6 md:p-10 shadow-2xl text-center hidden space-y-6">
+            <div class="inline-block p-4 rounded-full bg-amber-500/10 border border-amber-500/30">
+                <i id="rank-icon" class="fa-solid fa-crown text-5xl text-amber-400"></i>
+            </div>
+
+            <div class="space-y-1">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">小テスト完了！マスターランク</p>
+                <h2 id="rank-title" class="text-2xl md:text-4xl font-black bg-clip-text text-transparent bg-gradient-to-r from-amber-300 via-sky-300 to-emerald-300">
+                    護憲三派の大チーフ
+                </h2>
+            </div>
+
+            <!-- Score Display Box -->
+            <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 max-w-sm mx-auto flex justify-around items-center">
+                <div>
+                    <p class="text-xs text-slate-400 font-semibold">正解数</p>
+                    <p class="text-3xl font-black text-indigo-400"><span id="final-score">0</span> <span class="text-sm text-slate-400">/ 17</span></p>
+                </div>
+                <div class="h-10 w-px bg-slate-700"></div>
+                <div>
+                    <p class="text-xs text-slate-400 font-semibold">正答率</p>
+                    <p id="final-percentage" class="text-3xl font-black text-emerald-400">0%</p>
+                </div>
+            </div>
+
+            <p id="rank-description" class="text-sm text-slate-300 max-w-md mx-auto leading-relaxed bg-slate-900/50 p-4 rounded-xl border border-slate-800">
+                <!-- Evaluation message -->
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row justify-center gap-3 pt-2">
+                <button id="restart-btn" class="px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-rotate-right"></i>
+                    <span>もう一度挑戦する</span>
+                </button>
+                <button id="review-btn" class="px-6 py-3.5 rounded-xl bg-slate-700 hover:bg-slate-600 text-slate-200 font-bold transition flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>全解答・解説を見直す</span>
+                </button>
+            </div>
+
+            <!-- Review Accordion Container -->
+            <div id="review-container" class="hidden text-left space-y-3 pt-4 border-t border-slate-700 max-h-96 overflow-y-auto pr-2">
+                <h4 class="font-bold text-sm text-indigo-300 flex items-center">
+                    <i class="fa-solid fa-clipboard-list mr-2"></i>プリント56 全問題の完全解説
+                </h4>
+                <div id="review-list" class="space-y-3">
+                    <!-- Dynamic review cards -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full text-center py-4 text-xs text-slate-500 border-t border-slate-800/80 mt-auto">
+        日本史探究 授業プリントNo.56「ワシントン体制・政党内閣の成立」完全対応小テスト
+    </footer>
+
+    <script>
+        // Web Audio API Synthesizer (Zero external file dependencies)
+        class SoundEngine {
+            constructor() {
+                this.ctx = null;
+                this.bgmPlaying = false;
+                this.seEnabled = true;
+                this.bgmInterval = null;
+                this.step = 0;
+            }
+
+            init() {
+                if (!this.ctx) {
+                    const AudioContext = window.AudioContext || window.webkitAudioContext;
+                    this.ctx = new AudioContext();
+                }
+                if (this.ctx.state === 'suspended') {
+                    this.ctx.resume();
+                }
+            }
+
+            playCorrect() {
+                if (!this.seEnabled) return;
+                this.init();
+                const now = this.ctx.currentTime;
+                
+                // Fanfare Arpeggio: C5 - F5 - A5 - C6
+                const freqs = [523.25, 698.46, 880.00, 1046.50];
+                freqs.forEach((f, index) => {
+                    const osc = this.ctx.createOscillator();
+                    const gain = this.ctx.createGain();
+                    
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(f, now + index * 0.08);
+                    
+                    gain.gain.setValueAtTime(0.18, now + index * 0.08);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + index * 0.08 + 0.35);
+                    
+                    osc.connect(gain);
+                    gain.connect(this.ctx.destination);
+                    
+                    osc.start(now + index * 0.08);
+                    osc.stop(now + index * 0.08 + 0.35);
+                });
+            }
+
+            playIncorrect() {
+                if (!this.seEnabled) return;
+                this.init();
+                const now = this.ctx.currentTime;
+
+                // Low dual-tone buzzer
+                [164.81, 155.56].forEach(freq => {
+                    const osc = this.ctx.createOscillator();
+                    const gain = this.ctx.createGain();
+
+                    osc.type = 'sawtooth';
+                    osc.frequency.setValueAtTime(freq, now);
+
+                    gain.gain.setValueAtTime(0.2, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.45);
+
+                    osc.connect(gain);
+                    gain.connect(this.ctx.destination);
+
+                    osc.start(now);
+                    osc.stop(now + 0.45);
+                });
+            }
+
+            playClick() {
+                if (!this.seEnabled) return;
+                this.init();
+                const now = this.ctx.currentTime;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(900, now);
+                osc.frequency.exponentialRampToValueAtTime(450, now + 0.05);
+
+                gain.gain.setValueAtTime(0.1, now);
+                gain.gain.linearRampToValueAtTime(0.01, now + 0.05);
+
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+
+                osc.start(now);
+                osc.stop(now + 0.05);
+            }
+
+            toggleBGM() {
+                this.init();
+                this.bgmPlaying = !this.bgmPlaying;
+                if (this.bgmPlaying) {
+                    this.startBGM();
+                } else {
+                    this.stopBGM();
+                }
+                return this.bgmPlaying;
+            }
+
+            startBGM() {
+                if (this.bgmInterval) clearInterval(this.bgmInterval);
+                
+                // Chill Lofi Melody Sequence (Major 7th Feel)
+                const melody = [
+                    329.63, 392.00, 493.88, 587.33,
+                    392.00, 493.88, 523.25, 659.25,
+                    349.23, 440.00, 523.25, 659.25,
+                    329.63, 392.00, 440.00, 493.88
+                ];
+                
+                this.step = 0;
+                this.bgmInterval = setInterval(() => {
+                    if (!this.bgmPlaying) return;
+                    const now = this.ctx.currentTime;
+                    const freq = melody[this.step % melody.length];
+
+                    const osc = this.ctx.createOscillator();
+                    const gain = this.ctx.createGain();
+
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(freq, now);
+
+                    gain.gain.setValueAtTime(0.025, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
+
+                    osc.connect(gain);
+                    gain.connect(this.ctx.destination);
+
+                    osc.start(now);
+                    osc.stop(now + 0.4);
+
+                    this.step++;
+                }, 380);
+            }
+
+            stopBGM() {
+                if (this.bgmInterval) {
+                    clearInterval(this.bgmInterval);
+                    this.bgmInterval = null;
+                }
+            }
+        }
+
+        const sound = new SoundEngine();
+
+        // Question Database - Strictly 100% Comprehensive for PDF Print 56
+        const questions = [
+            {
+                category: "パリ講和会議",
+                question: "1919年のパリ講和会議において、決定された講和条約(1)と、日本の全権として派遣された人物の正しい組み合わせはどれか？",
+                context: "ヴェルサイユ宮殿「鏡の間」にて調印された講和条約",
+                options: [
+                    "ポーツマス条約 — 小村寿太郎・林董",
+                    "ヴェルサイユ条約 — 西園寺公望・牧野伸顕",
+                    "サンフランシスコ平和条約 — 吉田茂・重光葵",
+                    "ワシントン条約 — 加藤友三郎・幣原喜重郎"
+                ],
+                answer: 1,
+                explanation: "1919年のパリ講和会議で締結されたのは【ヴェルサイユ条約】です。日本の全権は前首相の【西園寺公望】と【牧野伸顕】が務めました。"
+            },
+            {
+                category: "民族自決と東アジア",
+                question: "パリ講和会議の基礎となったアメリカ大統領ウィルソンの「十四ヵ条」に含まれる原則と、それに刺激されて1919年に朝鮮で起きた運動(2)は何か？",
+                options: [
+                    "民族自決の原則 — 三・一独立運動",
+                    "門戸開放の原則 — 五・四運動",
+                    "平和主義の原則 — 義和団事件",
+                    "平等人道の原則 — 光復運動"
+                ],
+                answer: 0,
+                explanation: "ウィルソンの掲げた【民族自決の原則】は抑圧されていた民族に希望を与え、1919年3月1日に朝鮮で京城（ソウル）を発端とする【三・一独立運動】が発生しました。"
+            },
+            {
+                category: "パリ講和会議・日本の利得",
+                question: "パリ講和会議で日本が得た利得と、それに抗議して1919年に中国で発生した運動(3)の組み合わせとして正しいものはどれか？",
+                options: [
+                    "台湾の領有権獲得 — 五・四運動",
+                    "ドイツ領南洋諸島の委任統治権 ＆ 山東省権益継承 — 五・四運動",
+                    "満州全域の権益継承 — 五・三事件",
+                    "遼東半島南部の租借権 — 二十一ヵ条要求撲滅運動"
+                ],
+                answer: 1,
+                explanation: "日本は赤道以北の「ドイツ領南洋諸島の委任統治権」と「山東省の旧ドイツ権益継承」を得ました。これに対し中国国民が猛反発し、北京から全国へ広がったのが【五・四運動】（1919年5月4日）です。"
+            },
+            {
+                category: "国際連盟",
+                question: "1920年に成立した国際連盟(4)に関する記述として【誤っているもの】はどれか？",
+                options: [
+                    "アメリカ大統領ウィルソンの提唱によりヴェルサイユ条約で規定された",
+                    "本部はスイスのジュネーヴに置かれ、日本は常任理事国となった",
+                    "提唱国であるアメリカ、およびソ連・ドイツは成立当初不参加であった",
+                    "成立当初からアメリカ・イギリス・フランス・ソ連の4カ国が常任理事国を務めた"
+                ],
+                answer: 3,
+                explanation: "常任理事国は【イギリス・日本・フランス・イタリア】の4カ国でした。提唱国のアメリカは上院の反対で不参加、ソ連（1934年加盟）やドイツ（1926年加盟）も成立当初は不参加でした。"
+            },
+            {
+                category: "ワシントン会議",
+                question: "1921〜1922年にアメリカ大統領ハーディングの提唱で開かれた「ワシントン会議」に、日本全権として出席した海相(8)は誰か？",
+                options: [
+                    "加藤高明",
+                    "加藤友三郎",
+                    "山本権兵衛",
+                    "清浦圭吾"
+                ],
+                answer: 1,
+                explanation: "ワシントン会議の日本全権は、海軍大臣であった【加藤友三郎】です。彼は後に首相となり、海軍軍縮条約を誠実に実行しました。"
+            },
+            {
+                category: "四カ国条約",
+                question: "1921年に調印された「四カ国条約」(5)の内容および影響として正しいものはどれか？",
+                options: [
+                    "米・英・日・仏の4カ国で太平洋方面の勢力現状維持を約束し、日英同盟が廃棄された",
+                    "米・英・日・中が中国の門戸開放を約束し、日露協商が廃棄された",
+                    "英・日・仏・伊が主力艦の保有比率を決定し、三国協商が廃棄された",
+                    "米・英・日・ソが北太平洋の沿岸警備を協力し、石井・ランシング協定が強化された"
+                ],
+                answer: 0,
+                explanation: "【四カ国条約】（米・英・日・仏）は太平洋地域の現状維持を取り決め、これによって1902年以来続いていた【日英同盟】が解消（1923年廃棄）されました。"
+            },
+            {
+                category: "九ヵ国条約",
+                question: "1922年に調印された「九ヵ国条約」(6)の取り決めに関する記述として正しいものはどれか？",
+                options: [
+                    "中国の領土主権尊重・門戸開放・機会均等を約束し、石井・ランシング協定が廃棄された",
+                    "日本の満州における鉄道独占権を永遠に保障した",
+                    "山東省の旧ドイツ権益を日本が永久に保有することを列強が承認した",
+                    "ドイツの再軍備を容認し、中国への経済援助を決定した"
+                ],
+                answer: 0,
+                explanation: "【九ヵ国条約】は中国の領土保全・門戸開放・機会均等を規定しました。日米間の「石井・ランシング協定」は廃棄され、日中直接交渉で山東省の旧ドイツ権益は中国へ返還（放棄）されました。"
+            },
+            {
+                category: "ワシントン海軍軍備制限条約",
+                question: "1922年の「ワシントン海軍軍備制限条約」(7)において取り決められた、主力艦保有比率（イギリス：アメリカ：日本）の組み合わせはどれか？",
+                options: [
+                    "5 : 5 : 5",
+                    "5 : 5 : 3",
+                    "10 : 10 : 7",
+                    "5 : 3 : 1.67"
+                ],
+                answer: 1,
+                explanation: "主力艦の保有比率は【英5 : 米5 : 日3 : 仏1.67 : 伊1.67】（排水量比）と定められ、今後10年間は主力艦の新造が禁止されました。"
+            },
+            {
+                category: "非政党内閣の継続",
+                question: "加藤友三郎内閣（海軍軍縮を実施後に病死）の後に成立した第2次山本権兵衛内閣(9)の成立直前（1923年9月1日）に発生した大災害(10)は何か？",
+                options: [
+                    "北丹後地震",
+                    "関東大震災",
+                    "濃尾地震",
+                    "三陸津波"
+                ],
+                answer: 1,
+                explanation: "1923年9月1日、首都圏を【関東大震災】が襲いました。死者・行方不明者10万人以上に達し、山本権兵衛内閣はその混乱の中で組閣を行いました。"
+            },
+            {
+                category: "関東大震災と社会事件",
+                question: "関東大震災の混乱の中で発生した混乱や事件に関する記述として【誤っているもの】はどれか？",
+                options: [
+                    "流言飛語により朝鮮人や中国人が無差別に殺害された",
+                    "憲兵の甘粕正彦らが無政府主義者の大杉栄や伊藤野枝らを殺害した（甘粕事件）",
+                    "社会主義者が殺害された亀戸事件や、1ヶ月のモラトリアム（支払猶予令）が実施された",
+                    "治安維持法が初めて発令され、数千人の労働組合員が即座に死刑となった"
+                ],
+                answer: 3,
+                explanation: "治安維持法の制定は1925年（加藤高明内閣）であり、震災直後ではありません。震災時にはモラトリアムや震災手形の処理が行われました。"
+            },
+            {
+                category: "虎の門事件と内閣辞職",
+                question: "1923年12月、皇太子（後の昭和天皇）が狙撃された「虎の門事件」の責任をとって辞職した内閣はどれか？",
+                options: [
+                    "原敬内閣",
+                    "第2次山本権兵衛内閣",
+                    "清浦圭吾内閣",
+                    "加藤高明内閣"
+                ],
+                answer: 1,
+                explanation: "無政府主義者の難波大助が皇太子を狙撃した「虎の門事件」（1923年12月）により、第2次山本権兵衛内閣は警備の責任をとって総辞職しました。"
+            },
+            {
+                category: "第2次護憲運動",
+                question: "1924年、貴族院を基盤として成立した超然内閣である「清浦圭吾内閣」(11)に対し、倒閣運動を起こした「護憲三派」の政党と党首の組み合わせとして正しいものはどれか？",
+                options: [
+                    "立憲政友会（高橋是清）/ 憲政会（加藤高明）/ 革新倶楽部（犬養毅）",
+                    "政友本党（床次竹二郎）/ 立憲改進党（大隈重信）/ 自由党（板垣退助）",
+                    "憲政本党（犬養毅）/ 帝国党（佐々友房）/ 中正倶楽部",
+                    "立憲同志会（加藤高明）/ 社会大衆党（安部磯雄）/ 日本労働党"
+                ],
+                answer: 0,
+                explanation: "【第2次護憲運動】を起こした護憲三派は、政友会（高橋是清）、憲政会（加藤高明）、革新倶楽部（犬養毅）です。彼らは「普選断行・貴族院改革・行政整理」を掲げました。"
+            },
+            {
+                category: "護憲三派内閣の成立",
+                question: "総選挙で護憲三派が勝利した結果、1924年に成立した第1次加藤高明内閣(12)に関する内閣の変遷の暗記用フレーズ「か・わ・た・は・わ・い」の先頭「か」が指す内閣はどれか？",
+                options: [
+                    "加藤友三郎内閣",
+                    "加藤高明内閣",
+                    "桂太郎内閣",
+                    "川村竹治内閣"
+                ],
+                answer: 1,
+                explanation: "憲政の常道期（政党内閣期）の首相の覚え方「か・わ・た・は・わ・い」の「か」は【加藤高明】です。（加藤高明→若槻礼次郎→田中義一→浜口雄幸→若槻礼次郎→犬養毅）"
+            },
+            {
+                category: "普通選挙法",
+                question: "1925年、第1次加藤高明内閣のもとで成立した「普通選挙法」(13)の内容として正しいものはどれか？",
+                options: [
+                    "直接国税3円以上を納める25歳以上の男子に選挙権を与えた",
+                    "納税要件を完全に撤廃し、満25歳以上のすべての男子に選挙権を与えた",
+                    "満20歳以上の男女全員に完全な参政権を与えた",
+                    "直接国税10円以上を納める20歳以上の男子に選挙権を与えた"
+                ],
+                answer: 1,
+                explanation: "【普通選挙法】（1925年）により、それまでの納税資格制限が完全に撤廃され、「満25歳以上の男子」全員に選挙権が与えられました（有権者数は全人口の約19.8%に急増）。"
+            },
+            {
+                category: "治安維持法",
+                question: "普通選挙法とほぼ同時に、革新運動や社会主義・共産主義運動の広がりを取り締まるために1925年に制定された法律(14)は何か？",
+                options: [
+                    "治安警察法",
+                    "治安維持法",
+                    "破壊活動防止法",
+                    "新聞紙条例"
+                ],
+                answer: 1,
+                explanation: "【治安維持法】（1925年）は、「国体（天皇制）を変革すること」や「私有財産制度を否認すること」を目的とする結社の組織・加入を取り締まりました。"
+            },
+            {
+                category: "加藤高明内閣の3大成果",
+                question: "1925年（大正14年）に加藤高明内閣が達成した3大成果の組み合わせはどれか？",
+                options: [
+                    "普通選挙法制定 — 治安維持法制定 — 日ソ基本条約締結(15)",
+                    "公職選挙法制定 — 破壊活動防止法制定 — 日清修好条規締結",
+                    "貴族院令改正 — 地方自治法制定 — 日米通商航海条約締結",
+                    "治安警察法改正 — 陸軍軍縮 — 日英同盟締結"
+                ],
+                answer: 0,
+                explanation: "1925年の3大業績は、①【普通選挙法】制定、②【治安維持法】制定、③【日ソ基本条約】締結（国交樹立）の3つです。"
+            },
+            {
+                category: "衆議院議員選挙権の変遷",
+                question: "プリントの選挙権推移表より、衆議院議員選挙権の「直接国税要件」と「公布時の内閣」の歴史的変化の組み合わせとして正しいものはどれか？",
+                options: [
+                    "1889年（黒田内閣）：15円以上 → 1900年（山県内閣）：10円以上 → 1919年（原内閣）：3円以上 → 1925年（加藤高明内閣）：制限なし",
+                    "1889年（伊藤内閣）：10円以上 → 1900年（桂内閣）：5円以上 → 1919年（寺内内閣）：1円以上 → 1925年（加藤内閣）：制限なし",
+                    "1889年（黒田内閣）：20円以上 → 1900年（松方内閣）：15円以上 → 1919年（原内閣）：5円以上 → 1925年（清浦内閣）：1円以上",
+                    "1889年（大隈内閣）：15円以上 → 1900年（西園寺内閣）：10円以上 → 1919年（山本内閣）：3円以上 → 1925年（加藤内閣）：制限なし"
+                ],
+                answer: 0,
+                explanation: "直接国税制限は「15円以上（黒田内閣・1889）」→「10円以上（山県内閣・1900）」→「3円以上（原内閣・1919）」→「制限なし（加藤高明内閣・1925）」と緩和されていきました。"
+            }
+        ];
+
+        // App State
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let userAnswers = [];
+
+        // DOM Elements
+        const startScreen = document.getElementById('start-screen');
+        const quizScreen = document.getElementById('quiz-screen');
+        const resultScreen = document.getElementById('result-screen');
+
+        const startBtn = document.getElementById('start-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const restartBtn = document.getElementById('restart-btn');
+        const reviewBtn = document.getElementById('review-btn');
+
+        const questionCategory = document.getElementById('question-category');
+        const questionCount = document.getElementById('question-count');
+        const progressBar = document.getElementById('progress-bar');
+        const questionText = document.getElementById('question-text');
+        const contextBox = document.getElementById('context-box');
+        const contextText = document.getElementById('context-text');
+        const optionsContainer = document.getElementById('options-container');
+
+        const feedbackCard = document.getElementById('feedback-card');
+        const feedbackBadge = document.getElementById('feedback-badge');
+        const scoreIncrement = document.getElementById('score-increment');
+        const explanationText = document.getElementById('explanation-text');
+
+        const bgmToggle = document.getElementById('bgm-toggle');
+        const seToggle = document.getElementById('se-toggle');
+        const bgmStatus = document.getElementById('bgm-status');
+        const seStatus = document.getElementById('se-status');
+
+        // Sound Controls Event Listeners
+        bgmToggle.addEventListener('click', () => {
+            const isPlaying = sound.toggleBGM();
+            bgmStatus.textContent = `BGM: ${isPlaying ? 'ON' : 'OFF'}`;
+            bgmToggle.classList.toggle('bg-indigo-600', isPlaying);
+            bgmToggle.classList.toggle('bg-slate-700', !isPlaying);
+            bgmToggle.classList.toggle('text-white', isPlaying);
+            bgmToggle.classList.toggle('text-slate-300', !isPlaying);
+        });
+
+        seToggle.addEventListener('click', () => {
+            sound.seEnabled = !sound.seEnabled;
+            seStatus.textContent = `SE: ${sound.seEnabled ? 'ON' : 'OFF'}`;
+            seToggle.classList.toggle('bg-indigo-600', sound.seEnabled);
+            seToggle.classList.toggle('bg-slate-700', !sound.seEnabled);
+            seToggle.classList.toggle('text-white', sound.seEnabled);
+            seToggle.classList.toggle('text-slate-300', !sound.seEnabled);
+        });
+
+        // Main Navigation Event Listeners
+        startBtn.addEventListener('click', startQuiz);
+        nextBtn.addEventListener('click', handleNextQuestion);
+        restartBtn.addEventListener('click', startQuiz);
+        reviewBtn.addEventListener('click', toggleReview);
+
+        function startQuiz() {
+            sound.playClick();
+            currentQuestionIndex = 0;
+            score = 0;
+            userAnswers = [];
+
+            startScreen.classList.add('hidden');
+            resultScreen.classList.add('hidden');
+            quizScreen.classList.remove('hidden');
+
+            document.getElementById('review-container').classList.add('hidden');
+
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            const q = questions[currentQuestionIndex];
+
+            // Reset UI
+            feedbackCard.classList.add('hidden');
+            optionsContainer.innerHTML = '';
+
+            // Update Progress Header
+            questionCategory.textContent = `分野: ${q.category}`;
+            questionCount.textContent = `第 ${currentQuestionIndex + 1} / ${questions.length} 問`;
+            const progressPercent = ((currentQuestionIndex + 1) / questions.length) * 100;
+            progressBar.style.width = `${progressPercent}%`;
+
+            // Question Text & Hint Context
+            questionText.textContent = q.question;
+
+            if (q.context) {
+                contextBox.classList.remove('hidden');
+                contextText.textContent = q.context;
+            } else {
+                contextBox.classList.add('hidden');
+            }
+
+            // Render Options Buttons
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn w-full p-4 rounded-2xl bg-slate-800 hover:bg-slate-700/80 border border-slate-700/80 text-left font-semibold text-sm md:text-base text-slate-200 flex items-start space-x-3 transition group';
+                
+                const prefix = document.createElement('span');
+                prefix.className = 'w-6 h-6 rounded-full bg-slate-700 group-hover:bg-indigo-600 text-slate-300 group-hover:text-white flex items-center justify-center text-xs font-black shrink-0 mt-0.5 transition';
+                prefix.textContent = ['A', 'B', 'C', 'D'][idx];
+
+                const textSpan = document.createElement('span');
+                textSpan.className = 'flex-1';
+                textSpan.textContent = opt;
+
+                btn.appendChild(prefix);
+                btn.appendChild(textSpan);
+
+                btn.addEventListener('click', () => selectAnswer(idx));
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function selectAnswer(selectedIndex) {
+            const q = questions[currentQuestionIndex];
+            const isCorrect = selectedIndex === q.answer;
+
+            // Store user answer log
+            userAnswers.push({
+                question: q.question,
+                selected: selectedIndex,
+                correct: q.answer,
+                isCorrect: isCorrect,
+                explanation: q.explanation,
+                options: q.options,
+                category: q.category
+            });
+
+            // Audio Response
+            if (isCorrect) {
+                sound.playCorrect();
+                score++;
+            } else {
+                sound.playIncorrect();
+            }
+
+            // UI Button State Updating
+            const buttons = optionsContainer.querySelectorAll('button');
+            buttons.forEach((btn, idx) => {
+                btn.disabled = true;
+                btn.classList.remove('hover:bg-slate-700/80');
+
+                if (idx === q.answer) {
+                    btn.classList.add('bg-emerald-950/80', 'border-emerald-500', 'text-emerald-200');
+                    const badge = btn.querySelector('span');
+                    badge.className = 'w-6 h-6 rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center text-xs font-black shrink-0 mt-0.5';
+                    badge.innerHTML = '<i class="fa-solid fa-check"></i>';
+                } else if (idx === selectedIndex && !isCorrect) {
+                    btn.classList.add('bg-rose-950/80', 'border-rose-500', 'text-rose-200');
+                    const badge = btn.querySelector('span');
+                    badge.className = 'w-6 h-6 rounded-full bg-rose-500 text-white flex items-center justify-center text-xs font-black shrink-0 mt-0.5';
+                    badge.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    btn.classList.add('opacity-40');
+                }
+            });
+
+            // Show Feedback Card
+            feedbackCard.classList.remove('hidden');
+            if (isCorrect) {
+                feedbackCard.className = 'p-5 rounded-2xl border bg-emerald-950/40 border-emerald-500/50 space-y-3 animate-fade-in';
+                feedbackBadge.className = 'font-black text-lg text-emerald-400 flex items-center space-x-2';
+                feedbackBadge.innerHTML = '<i class="fa-solid fa-circle-check"></i><span>正解！素晴らしい！</span>';
+                scoreIncrement.className = 'text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30';
+                scoreIncrement.textContent = '+1 Point';
+            } else {
+                feedbackCard.className = 'p-5 rounded-2xl border bg-rose-950/40 border-rose-500/50 space-y-3 animate-fade-in';
+                feedbackBadge.className = 'font-black text-lg text-rose-400 flex items-center space-x-2';
+                feedbackBadge.innerHTML = '<i class="fa-solid fa-circle-xmark"></i><span>不正解... 要復習！</span>';
+                scoreIncrement.className = 'text-xs font-bold px-2.5 py-1 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/30';
+                scoreIncrement.textContent = '+0 Point';
+            }
+
+            explanationText.textContent = q.explanation;
+        }
+
+        function handleNextQuestion() {
+            sound.playClick();
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            quizScreen.classList.add('hidden');
+            resultScreen.classList.remove('hidden');
+
+            const percentage = Math.round((score / questions.length) * 100);
+            document.getElementById('final-score').textContent = score;
+            document.getElementById('final-percentage').textContent = `${percentage}%`;
+
+            // Evaluation Ranks
+            const rankTitle = document.getElementById('rank-title');
+            const rankIcon = document.getElementById('rank-icon');
+            const rankDesc = document.getElementById('rank-description');
+
+            if (score === 17) {
+                rankTitle.textContent = "護憲三派の大チーフ・加藤高明級";
+                rankIcon.className = "fa-solid fa-crown text-5xl text-amber-400";
+                rankDesc.textContent = "パーフェクト達成！ワシントン条約の比率から普通選挙法・治安維持法・選挙権の推移まで完全完璧にマスターしています！定期テストも大学入試も無敵です！";
+            } else if (score >= 14) {
+                rankTitle.textContent = "国際連盟 常任理事国級";
+                rankIcon.className = "fa-solid fa-globe text-5xl text-sky-400";
+                rankDesc.textContent = "素晴らしい高得点です！ワシントン体制の国際関係や政党内閣の展開を非常に深く理解できています。間違えた問題を復習してパーフェクトを目指そう！";
+            } else if (score >= 10) {
+                rankTitle.textContent = "全権大使・加藤友三郎級";
+                rankIcon.className = "fa-solid fa-anchor text-5xl text-indigo-400";
+                rankDesc.textContent = "合格ライン突破！軍縮や二大政党政治の基本がしっかり身についています。四カ国・九カ国条約の違いや大正14年の3大成果を再確認しておきましょう。";
+            } else if (score >= 6) {
+                rankTitle.textContent = "護憲運動の書生クラス";
+                rankIcon.className = "fa-solid fa-book-open text-5xl text-emerald-400";
+                rankDesc.textContent = "基礎知識は身についています！「か・わ・た・は・わ・い」や選挙権の制限納税額（15円→10円→3円→制限なし）などの流れをもう一度プリントでチェック！";
+            } else {
+                rankTitle.textContent = "探究ビギナー";
+                rankIcon.className = "fa-solid fa-seedling text-5xl text-rose-400";
+                rankDesc.textContent = "伸びしろタップリ！まずはプリントNo.56をじっくり読み直して、問題の解説を見返しながら再挑戦してみよう！";
+            }
+
+            renderReviewList();
+        }
+
+        function toggleReview() {
+            sound.playClick();
+            const reviewContainer = document.getElementById('review-container');
+            reviewContainer.classList.toggle('hidden');
+        }
+
+        function renderReviewList() {
+            const reviewList = document.getElementById('review-list');
+            reviewList.innerHTML = '';
+
+            userAnswers.forEach((ans, idx) => {
+                const card = document.createElement('div');
+                card.className = `p-4 rounded-2xl border text-xs space-y-2 ${
+                    ans.isCorrect ? 'bg-emerald-950/20 border-emerald-500/30' : 'bg-rose-950/20 border-rose-500/30'
+                }`;
+
+                card.innerHTML = `
+                    <div class="flex items-center justify-between font-bold">
+                        <span class="${ans.isCorrect ? 'text-emerald-400' : 'text-rose-400'} flex items-center">
+                            ${ans.isCorrect ? '<i class="fa-solid fa-circle-check mr-1.5"></i>正解' : '<i class="fa-solid fa-circle-xmark mr-1.5"></i>不正解'} (第${idx + 1}問)
+                        </span>
+                        <span class="text-slate-400 bg-slate-800 px-2.5 py-0.5 rounded-full">${ans.category}</span>
+                    </div>
+                    <p class="font-bold text-slate-200 text-sm leading-snug">${ans.question}</p>
+                    <p class="text-slate-300"><span class="text-slate-400">あなたの解答:</span> ${ans.options[ans.selected]}</p>
+                    ${!ans.isCorrect ? `<p class="text-emerald-300 font-semibold"><span class="text-slate-400">正解:</span> ${ans.options[ans.correct]}</p>` : ''}
+                    <div class="bg-slate-900/60 p-3 rounded-xl text-slate-300 border border-slate-800 mt-2 leading-relaxed">
+                        <span class="text-indigo-400 font-bold">ポイント解説:</span> ${ans.explanation}
+                    </div>
+                `;
+
+                reviewList.appendChild(card);
+            });
+        }
+    </script>
+</body>
+</html>
